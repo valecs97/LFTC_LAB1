@@ -1,0 +1,7 @@
+START
+    VAR A INT ,B BOOLEAN,C DAY;
+    A=2;
+    B=TRUE;
+    C=LUNI;
+    READ A;
+END
