@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class StatementRepo implements RepoInter<Tuple> {
-    List<Tuple> repo = new ArrayList<>();
+    private List<Tuple> repo = new ArrayList<>();
 
     @Override
     public void add(Tuple tuple) {
@@ -18,10 +18,22 @@ public class StatementRepo implements RepoInter<Tuple> {
     @Override
     public Tuple get(Long id) {
         Optional<Tuple> t = repo.stream().filter(tuple -> tuple.getId() == id).findFirst();
-        return t.isPresent() ? t.get() : null;
+        return t.orElse(null);
     }
 
+    @Override
+    public Tuple get(Tuple tuple) {
+        Optional<Tuple> t = repo.stream().filter(item -> item.x == tuple.x).findFirst();
+        return t.orElse(null);
+    }
+
+    @Override
     public List<Tuple> getAll(){
         return repo;
+    }
+
+    @Override
+    public Integer getSize() {
+        return repo.size();
     }
 }

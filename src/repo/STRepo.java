@@ -17,6 +17,22 @@ public class STRepo implements RepoInter<Entity> {
     @Override
     public Entity get(Long id) {
         Optional<Entity> res = repo.stream().filter(e -> e.getId()==id).findFirst();
-        return res.isPresent() ? res.get() : null;
+        return res.orElse(null);
+    }
+
+    @Override
+    public Entity get(Entity entity) {
+        Optional<Entity> res = repo.stream().filter(e -> e.getValue()==entity.getValue()).findFirst();
+        return res.orElse(null);
+    }
+
+    @Override
+    public List<Entity> getAll() {
+        return repo;
+    }
+
+    @Override
+    public Integer getSize() {
+        return repo.size();
     }
 }

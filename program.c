@@ -5,11 +5,16 @@ START
     C=LUNI;
     READ A;
     WRITE TRUE;
-    IF (true or (true and false)) == (1+1)
+    IF true or ((A or B) and false) == (1 + (3 + a))
     THEN
         B=FALSE;
         C=MARTI;
     ELSE
         A=TRUE;
     END-IF;
+    WHILE true or ((A or B) and false) == (1 + (3 + a))
+        THEN
+            B=FALSE;
+            C=MARTI;
+    END-WHILE;
 END
