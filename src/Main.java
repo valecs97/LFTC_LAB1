@@ -1,9 +1,7 @@
-import exceptions.ProgramException;
+import exceptions.CompilerException;
 import model.BaseEntity;
-import model.Entity;
 import model.Tuple;
 import repo.RepoInter;
-import repo.STRepo;
 import repo.StatementRepo;
 import service.ReadProgram;
 import service.Service;
@@ -21,7 +19,7 @@ public class Main {
         ReadProgram readProgram = new ReadProgram(tupleRepoInter);
         try {
             readProgram.readCode(code);
-        } catch (ProgramException e) {
+        } catch (CompilerException e) {
             System.out.println(e.toString());
         }
         ((StatementRepo) tupleRepoInter).getAll().stream().sorted(Comparator.comparing(BaseEntity::getId)).forEach(System.out::println);

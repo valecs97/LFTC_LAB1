@@ -1,9 +1,9 @@
 package exceptions;
 
-public class ProgramException extends Exception {
+public class CompilerException extends Exception {
     String message;
 
-    public ProgramException(String message) {
+    public CompilerException(String message) {
         super(message);
         this.message = message;
     }
