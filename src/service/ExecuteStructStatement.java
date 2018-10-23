@@ -7,10 +7,11 @@ import repo.RepoInter;
 public class ExecuteStructStatement {
 
     RepoInter<Tuple> stmtRepo;
-    RepoInter<Entity> st,st_c;
+    RepoInter<Tuple> pif,st,st_c;
 
-    public ExecuteStructStatement(RepoInter<Tuple> stmtRepo, RepoInter<Entity> st, RepoInter<Entity> st_c) {
+    public ExecuteStructStatement(RepoInter<Tuple> stmtRepo, RepoInter<Tuple> pif, RepoInter<Tuple> st, RepoInter<Tuple> st_c) {
         this.stmtRepo = stmtRepo;
+        this.pif = pif;
         this.st = st;
         this.st_c = st_c;
     }

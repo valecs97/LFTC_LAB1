@@ -133,7 +133,9 @@ public class SimpleStatement {
             type = getType(decStr[1]);
             decList.add(new Tuple<>(-1L,name,type));
         }
+        repo.add(new Tuple<>(Statement.DECLARATIONSTART,null));
         decList.forEach(t -> repo.add(new Tuple<>(Statement.DECLARATION,new Tuple<>(-1L,t.x,t.y))));
+        repo.add(new Tuple<>(Statement.DECLARATIONEND,null));
     }
 
     public String replaceNewLine(String code){

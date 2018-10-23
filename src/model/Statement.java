@@ -4,7 +4,9 @@ public enum Statement {
     READ,
     WRITE,
     ASSIGNEMNT,
+    DECLARATIONSTART,
     DECLARATION,
+    DECLARATIONEND,
 
     CONDITION,
     CONDITIONPARAMETER,
